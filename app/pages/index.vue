@@ -4,15 +4,15 @@
       <b-col style="padding: 5%">
         <ul class="tools">
           <li class="water" @click="addWater">
-            <b-badge variant="primary">0</b-badge>
+            <b-badge variant="primary">{{ state.water }}</b-badge>
           </li>
           <li class="txt">+</li>
           <li class="millet" @click="addMillet">
-            <b-badge variant="warning">0</b-badge>
+            <b-badge variant="warning">{{ state.millet }}</b-badge>
           </li>
           <li class="txt">=</li>
           <li class="flour" @click="dropFlour">
-            <b-badge variant="primary">0</b-badge>
+            <b-badge variant="primary">{{ state.flour }}</b-badge>
           </li>
         </ul>
         <h3>Water: 0</h3>
@@ -31,7 +31,7 @@
           {{ state }}
         </div>
         <div>
-          <b-img src="/anim.gif"></b-img>
+          <b-img :src="millImg()"></b-img>
         </div>
 
       </b-col>

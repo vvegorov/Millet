@@ -29,7 +29,7 @@ public class MillStone extends Machine {
     public void run() {
 
         while (!isInterrupted()) {
-//            logger.info("MillStone ==> {}", engine.getPower());
+
             if (engine.getPower() > 0) {
                 engine.decPower(1);
                 try {
@@ -38,9 +38,9 @@ public class MillStone extends Machine {
                         Millet millet = millets.poll();
                         if (millet != null) {
                             floursQueue.offer(new Flour());
-                            logger.info("floursQueue.offer(new Flour()) >> Flour: {}", floursQueue.size());
+                            logger.info("MillStone >> floursQueue.offer(new Flour()) >> Flour: {}", floursQueue.size());
                         }
-                        logger.info("Power left: {}", engine.getPower());
+                        logger.info("MillStone >> Power left: {}", engine.getPower());
                     });
 
                     Thread.sleep(500);

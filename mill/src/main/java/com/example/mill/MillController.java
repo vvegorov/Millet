@@ -33,7 +33,7 @@ public class MillController {
     }
 
     @PostMapping("flour/drop")
-    public String dropFlour(@PathVariable Integer capacity) {
+    public String dropFlour() {
         millService.dropFlour();
         return "OK";
     }

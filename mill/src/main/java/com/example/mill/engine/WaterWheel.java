@@ -28,14 +28,15 @@ public class WaterWheel extends Engine {
             try
             {
                 Water water = waterFlow.poll();
-                logger.info("WaterWheel == >> waterFlow.poll() ==> water.getPower()");
+
                 this.executor.execute(() ->
                 {
                     if (water != null && this.getPower() < MAX_POWER)
                     {
                         this.incPower(water.getPower());
+                        logger.info("WaterWheel >> water.getPower() ==> Power ++ : {}", this.getPower());
                     }
-                    logger.info("water.getPower() ==> Power ++ : {}", this.getPower());
+
                 });
 
                 Thread.sleep(200);
